@@ -1,0 +1,71 @@
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #191919; /* Dark background */
+}
+
+.container {
+    position: relative;
+    width: 400px;
+    height: 400px;
+}
+
+.balloon {
+    position: absolute;
+    top: 10%;
+    left: 30%;
+    width: 80px;
+    height: 130px;
+    background-color: #ffaa00; /* Orange balloon */
+    border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+    animation: balloonAnimation 4s ease-in-out infinite alternate;
+}
+
+.cake {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 200px;
+    height: 150px;
+    background-color: #734761; /* Pink cake */
+    border-radius: 0 0 15px 15px;
+}
+
+.message {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+@keyframes balloonAnimation {
+    0% {
+        transform: translateY(0);
+    }
+    100% {
+        transform: translateY(-40px);
+    }
+}
+
+/* Style the text */
+h1 {
+    color: #fff; /* White text */
+    font-size: 28px;
+    font-family: 'Rock Salt', cursive; /* Fun font */
+}
+
+p {
+    color: #ddd; /* Light gray text */
+    font-size: 18px;
+}
+
+/* Hide default audio controls */
+#audio-controls {
+    display: none;
+}
