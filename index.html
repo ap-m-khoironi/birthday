@@ -1,20 +1,88 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Happy Birthday!</title>
-    <link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Untuk Kamu 🤍</title>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+            href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&family=Pacifico&display=swap"
+            rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-<div class="container">
-    <div class="balloon"></div>
-    <div class="cake"></div>
-    <div class="message">
-        <h1>Wilujeung tepang taun, Apri!</h1>
-        <p>Lamun lain apri awewena</p>
+
+<!-- Background bokeh -->
+<canvas id="bokeh-canvas"></canvas>
+
+<!-- Floating hearts -->
+<div class="float-layer" id="float-layer"></div>
+
+<!-- INTRO OVERLAY (ASK NAME) -->
+<section class="intro" id="introSection">
+    <div class="intro-inner">
+        <div class="intro-text">
+            Hai...
+            boleh aku pastikan dulu?
+
+            Siapa nama murid kamu yang ngaji online sama kamu? 🫶
+        </div>
+
+        <div class="intro-form">
+            <input
+                    id="nameInput"
+                    class="intro-input"
+                    type="text"
+                    placeholder="tulis namamu di sini..."
+                    autocomplete="off"
+            />
+            <button class="btn intro-btn" id="btnStart">
+                Lanjut →
+            </button>
+        </div>
+
+        <div class="intro-hint">
+            (kalau ini beneran kamu, lanjut ya)
+        </div>
+
+        <div class="intro-error" id="introError"></div>
     </div>
-</div>
-<audio id="bg-music" src="happy_birthday.mp3" autoplay loop></audio>
+</section>
+
+<!-- MAIN CARD (hidden at first) -->
+<main class="card hidden" id="mainCard">
+    <div class="mini-label">Untuk kamu yang paling aku sayang 🌙</div>
+
+    <h1 class="headline">
+        Selamat ulang tahun,<br />
+        <span class="name" id="nameTarget">Sayangku</span>
+    </h1>
+
+    <div class="photo-frame locked" id="photoFrame">
+        <!-- Ganti dengan foto kalian -->
+        <img src="rizq.jpeg" alt="photo" />
+        <div class="soft-glow"></div>
+        <div class="photo-cover" id="photoCoverText">
+            ini cuma buat kamu 🤍
+        </div>
+    </div>
+
+    <!-- container puisi -->
+    <div class="poem" id="poemContainer"></div>
+
+    <footer class="footer-note">
+        Ini untuk kamu.
+        Dari aku, <span class="me">Khoironi</span>.
+    </footer>
+</main>
+
+<!-- audio -->
+<audio id="bgAudio" loop></audio>
+
+<script src="script.js"></script>
 </body>
 </html>
